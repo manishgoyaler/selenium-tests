@@ -411,6 +411,36 @@ dependencies {
     testCompile 'com.jayway.jsonpath:json-path:1.2.0'
     testCompile 'net.lightbody.bmp:browsermob-core:2.1.0-beta-2'
     testCompile 'net.sourceforge.htmlunit:htmlunit:2.18'
+
+    compile "org.seleniumhq.selenium:selenium-chrome-driver:${webdriverVersion}"
+    compile "org.seleniumhq.selenium:selenium-api:${webdriverVersion}"
+    compile "org.seleniumhq.selenium:selenium-htmlunit-driver:${webdriverVersion}"
+    compile "org.seleniumhq.selenium:selenium-firefox-driver:${webdriverVersion}"
+    compile "org.seleniumhq.selenium:selenium-ie-driver:${webdriverVersion}"
+    compile "org.seleniumhq.selenium:selenium-safari-driver:${webdriverVersion}"
+    compile "org.seleniumhq.selenium:selenium-support:${webdriverVersion}"
+    compile 'org.apache.httpcomponents:httpcore:4.4.1'
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'commons-io:commons-io:2.4'
+    compile 'xml-apis:xml-apis:1.4.01'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'org.seleniumhq.selenium:jetty-repacked:7.6.1'
+    compile 'commons-lang:commons-lang:2.4'
+    compile 'com.github.detro.ghostdriver:phantomjsdriver:1.1.0'
+    compile 'org.testng:testng:6.9.6'
+    compile 'org.jsoup:jsoup:1.8.3'
+    compile 'com.google.guava:guava:18.0'
+    compile 'org.yaml:snakeyaml:1.8'
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+    compile 'javax.mail:mail:1.4.4'
+    compile 'commons-configuration:commons-configuration:1.6'
+    compile 'javax.json:javax.json-api:1.0'
+    compile 'org.json:json:20080701'
+    compile 'io.appium:java-client:3.1.0'
+    compile 'joda-time:joda-time:2.7'
+    compile 'com.jayway.jsonpath:json-path:1.2.0'
+    compile 'net.lightbody.bmp:browsermob-core:2.1.0-beta-2'
+    compile 'net.sourceforge.htmlunit:htmlunit:2.18'
 }
 
 
