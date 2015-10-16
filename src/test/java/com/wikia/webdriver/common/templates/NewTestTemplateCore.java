@@ -66,6 +66,8 @@ public class NewTestTemplateCore {
     driver =
         registerDriverListener(NewDriverProvider.getDriverInstanceForBrowser(Configuration
             .getBrowser()));
+
+    driver.manage().deleteAllCookies();
 //    driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
   }
 
@@ -102,7 +104,7 @@ public class NewTestTemplateCore {
       try {
         driver.quit();
       } catch (Error e) {
-        driver.quit();
+        System.out.print(e.toString());
       }
     }
   }
