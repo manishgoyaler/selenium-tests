@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ElementStateHelper {
 
-  public static final int TIMEOUT = 30;
+  public static final int TIMEOUT = 100;
 
   private ElementStateHelper() {
 

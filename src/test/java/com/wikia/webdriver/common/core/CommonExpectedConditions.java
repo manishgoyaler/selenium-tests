@@ -308,18 +308,17 @@ public class CommonExpectedConditions {
         try {
           driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
           Boolean isDisplayed = element.isDisplayed();
-          driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+          driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
           return !isDisplayed;
         } catch (StaleElementReferenceException e) {
           // Returns true because stale element reference implies that element
           // is no longer visible.
           return true;
         } catch (NoSuchElementException e) {
-          driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+          driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
           return true;
         }
       }
-
       @Override
       public String toString() {
         return "element to no longer be visible: " + element.toString();

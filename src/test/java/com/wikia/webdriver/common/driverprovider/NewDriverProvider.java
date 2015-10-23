@@ -74,7 +74,7 @@ public class NewDriverProvider {
       throw new WebDriverException("Provided driver is not supported.");
     }
 
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
     return driver;
   }
 

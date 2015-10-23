@@ -597,7 +597,7 @@ public class WikiBasePageObject extends BasePageObject {
     try {
       wait.forElementVisible(flashMessage);
     } finally {
-      driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
     }
   }
 
