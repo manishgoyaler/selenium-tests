@@ -306,7 +306,7 @@ public class CommonExpectedConditions {
     return new ExpectedCondition<Boolean>() {
       public Boolean apply(WebDriver driver) {
         try {
-          driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+          driver.manage().timeouts().implicitlyWait(250, TimeUnit.MILLISECONDS);
           Boolean isDisplayed = element.isDisplayed();
           driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
           return !isDisplayed;
