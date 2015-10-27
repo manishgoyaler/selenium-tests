@@ -87,7 +87,9 @@ public class BasePageObject {
 
   protected void setWindowSizeAndroid() {
     if (!Configuration.getBrowser().contains("ANDROID")) {
-      driver.manage().window().maximize();
+      driver.manage().window().setPosition(new Point(10,10));
+      driver.manage().window().setSize(new Dimension(1400,800));
+//      driver.manage().window().maximize();
     }
   }
 
