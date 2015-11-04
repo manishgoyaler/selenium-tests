@@ -2,7 +2,6 @@ package com.wikia.webdriver.testcases.mercurytests;
 
 import com.wikia.webdriver.common.contentpatterns.MercurySubpages;
 import com.wikia.webdriver.common.core.Assertion;
-import com.wikia.webdriver.common.core.annotations.Driver;
 import com.wikia.webdriver.common.core.annotations.Execute;
 import com.wikia.webdriver.common.core.annotations.User;
 import com.wikia.webdriver.common.core.configuration.Configuration;
@@ -69,7 +68,7 @@ public class RedirectionTests extends NewTestTemplate {
   }
 
   @Test(groups = "RedirectionTest_004")
-  @Execute(onWikia = "mercuryautomationtesting", allowedDriver = Driver.Android)
+  @Execute(onWikia = "mercuryautomationtesting")
   public void MercuryRedirectionTest_004_RedirectFromFullSiteToMobile() {
     OasisFooterComponentObject oasisFooter = new OasisFooterComponentObject(driver);
     SkinHelper helper = new SkinHelper(driver);

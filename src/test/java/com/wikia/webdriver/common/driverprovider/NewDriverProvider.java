@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -211,9 +212,23 @@ public class NewDriverProvider {
                            .getPath());
 
     // TODO change mobile tests to use @UserAgent annotation
+
+    HashMap<String, Object> chromeOptionsDeviceName = new HashMap<String, Object>();
     if ("CHROMEMOBILEMERCURY".equals(browserName)) {
-      chromeOptions
-          .addArguments("--user-agent=" + userAgentRegistry.getUserAgent("iPhone"));
+
+      HashMap<String, String> mobileEmulation = new HashMap<String, String>();
+      mobileEmulation.put("deviceName", "Apple iPhone 5");
+
+
+      chromeOptionsDeviceName.put("mobileEmulation", mobileEmulation);
+      chromeOptions.addArguments("--touch-screen");
+
+//      DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//      capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+//      WebDriver driver = new ChromeDriver(capabilities);
+//
+//      chromeOptions
+//          .addArguments("--user-agent=" + userAgentRegistry.getUserAgent("iPhone"));
     }
 
 //    chromeOptions.addArguments("user-data-dir="
@@ -225,8 +240,8 @@ public class NewDriverProvider {
       chromeOptions.addArguments("start-maximized");
     }
 
-    caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
+    caps.setCapability(ChromeOptions.CAPABILITY, chromeOptionsDeviceName);
+//    caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
     setBrowserLogging(Level.SEVERE);
 
     ExtHelper.addExtensions(Configuration.getExtensions());
