@@ -218,10 +218,7 @@ public class NewDriverProvider {
 
       HashMap<String, String> mobileEmulation = new HashMap<String, String>();
       mobileEmulation.put("deviceName", "Apple iPhone 5");
-
-
       chromeOptionsDeviceName.put("mobileEmulation", mobileEmulation);
-      chromeOptions.addArguments("--touch-screen");
 
 //      DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 //      capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
