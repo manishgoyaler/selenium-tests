@@ -29,7 +29,8 @@ public class TestAdsKruxIntegration extends TemplateNoFirstLoad {
   @Test(
       dataProviderClass = AdsDataProvider.class,
       dataProvider = "kruxIntegration",
-      groups = "AdsKruxIntegrationOasis"
+      groups = "AdsKruxIntegrationOasis",
+      invocationCount = 5
   )
   @UseUnstablePageLoadStrategy
   public void adsKruxIntegrationOasis(String wikiName, String article) {
