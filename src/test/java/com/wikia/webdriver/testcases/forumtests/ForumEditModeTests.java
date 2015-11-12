@@ -1,6 +1,8 @@
 package com.wikia.webdriver.testcases.forumtests;
 
 import com.wikia.webdriver.common.contentpatterns.PageContent;
+import com.wikia.webdriver.common.core.annotations.Execute;
+import com.wikia.webdriver.common.core.annotations.User;
 import com.wikia.webdriver.common.core.configuration.Configuration;
 import com.wikia.webdriver.common.properties.Credentials;
 import com.wikia.webdriver.common.templates.NewTestTemplate;
@@ -95,14 +97,14 @@ public class ForumEditModeTests extends NewTestTemplate {
     manageForum.clickMoveUp(second);
   }
 
-  @Test(groups = {"Forum_006", "Forum", "ForumEditMode"}, enabled = false)
+  @Test(groups = {"Forum_006", "Forum", "ForumEditMode"})
+  @Execute(asUser = User.STAFF)
   public void forumEditModeTests_006_templatesInBoardDescription() {
     ForumPageObject forumMainPage = new ForumPageObject(driver);
 
     // create a template
     String templateNameAndContent = "Forum_test_template_" + forumMainPage.getTimeStamp();
     WikiArticlePageObject article = new WikiArticlePageObject(driver);
-    forumMainPage.loginAs(credentials.userNameStaff, credentials.passwordStaff, wikiURL);
     article.createNewTemplate(wikiURL, templateNameAndContent, templateNameAndContent);
 
     // open forum page and create new board

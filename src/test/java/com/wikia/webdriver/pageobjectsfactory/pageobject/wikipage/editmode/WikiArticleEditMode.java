@@ -40,7 +40,7 @@ public class WikiArticleEditMode extends WikiEditMode {
   private WebElement visualModeIFrame;
   @FindBy(css = ".cke_source")
   private WebElement sourceModeTextArea;
-  @FindBy(css = "#wpTextbox1")
+  @FindBy(css = ".ace_text-input")
   private WebElement messageSourceModeTextArea;
   @FindBy(css = "div.cke_wrapper.cke_ltr div.cke_contents iframe")
   private WebElement iFrame;
@@ -369,7 +369,7 @@ public class WikiArticleEditMode extends WikiEditMode {
 
   public void typeInTemplateContent(String content) {
     driver.switchTo().defaultContent();
-    wait.forElementVisible(messageSourceModeTextArea);
+    wait.forElementInViewPort(messageSourceModeTextArea);
     messageSourceModeTextArea.sendKeys(content);
     PageObjectLogging.log(
         "typeInContent",
