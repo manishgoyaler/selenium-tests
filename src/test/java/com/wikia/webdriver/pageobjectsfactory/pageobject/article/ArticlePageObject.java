@@ -38,8 +38,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 /**
  * @author Bogna 'bognix' Knychała
@@ -386,7 +390,8 @@ public class ArticlePageObject extends WikiBasePageObject {
   }
 
   public void verifyDropdownForAdmin() {
-    articleEditDropdown.click();
+//    articleEditDropdown.click();
+    new Actions(driver).click(articleEditDropdown).moveByOffset(0, 20).perform();
     wait.forElementVisible(renameDropdown);
     wait.forElementVisible(deleteDropdown);
     wait.forElementVisible(historyDropdown);
@@ -406,7 +411,9 @@ public class ArticlePageObject extends WikiBasePageObject {
   }
 
   public void verifyDropdownForAnon() {
-    articleEditDropdown.click();
+//    articleEditDropdown.click();
+    new Actions(driver).click(articleEditDropdown).moveByOffset(0, 20).perform();
+
     wait.forElementVisible(historyDropdown);
     wait.forElementVisible(veEditButton);
     Assertion.assertEquals(editDropdownElements.size(), 2);
