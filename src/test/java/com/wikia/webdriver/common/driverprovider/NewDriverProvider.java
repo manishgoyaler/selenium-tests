@@ -221,7 +221,7 @@ public class NewDriverProvider {
 
     if ("true".equals(Configuration.getDisableFlash())) {
       chromeOptions.addArguments("disable-bundled-ppapi-flash");
-      chromeOptions.addArguments("process-per-site");
+//      chromeOptions.addArguments("process-per-site");
       chromeOptions.addArguments("start-maximized");
       chromeOptions.addArguments("disable-notifications");
     }

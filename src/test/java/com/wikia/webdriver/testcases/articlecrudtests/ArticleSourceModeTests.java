@@ -3,7 +3,9 @@ package com.wikia.webdriver.testcases.articlecrudtests;
 import com.wikia.webdriver.common.contentpatterns.PageContent;
 import com.wikia.webdriver.common.contentpatterns.VideoContent;
 import com.wikia.webdriver.common.core.annotations.CreationTicket;
+import com.wikia.webdriver.common.core.annotations.Execute;
 import com.wikia.webdriver.common.core.annotations.RelatedIssue;
+import com.wikia.webdriver.common.core.api.ArticleContent;
 import com.wikia.webdriver.common.core.configuration.Configuration;
 import com.wikia.webdriver.common.core.video.YoutubeVideo;
 import com.wikia.webdriver.common.core.video.YoutubeVideoProvider;
@@ -287,14 +289,17 @@ public class ArticleSourceModeTests extends NewTestTemplate {
 
   @CreationTicket(ticketID = "CONCF-626")
   @Test(groups = {"RTE_extended_4", "RTE_extended_020"})
+  @Execute(disableFlash = "false")
   @RelatedIssue(issueID = "MAIN-6037", comment = "Product needs the fix. Check the status of the attached ticket and react")
   public void RTE_020_YoutubeTag_Preview() {
-    String articleName = PageContent.ARTICLE_NAME_PREFIX + base.getTimeStamp();
-    ArticlePageObject article = new ArticlePageObject(driver).open(articleName);
+//    YoutubeVideo video = YoutubeVideoProvider.getLatestVideoForQuery("cat");
+//    String videoID = video.getID();
+    String videoID = "5_6IFtC40vE";
+    new ArticleContent().push("<youtube>"+videoID+"</youtube>");
+
+    ArticlePageObject article = new ArticlePageObject(driver).open();
     SourceEditModePageObject source = article.openCurrectArticleSourceMode();
-    YoutubeVideo video = YoutubeVideoProvider.getLatestVideoForQuery("water");
-    String videoID = video.getID();
-    source.addContentInSourceMode("<youtube>\n" + videoID + "\n</youtube>");
+//    source.addContentInSourceMode("<youtube>\n" + videoID + "\n</youtube>");
     PreviewEditModePageObject preview = source.previewArticle();
     preview.verifyVideoOnPreview(videoID);
   }

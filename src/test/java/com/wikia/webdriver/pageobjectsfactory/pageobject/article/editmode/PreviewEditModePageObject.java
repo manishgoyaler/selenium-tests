@@ -17,7 +17,7 @@ public class PreviewEditModePageObject extends EditMode {
   private WebElement previewModal;
   @FindBy(css = ".preview .video-thumbnail")
   protected WebElement videoArticle;
-  @FindBy(css = "#mw-content-text object")
+  @FindBy(xpath = "//*[contains(@id,'w-content-text')]/object/@id")
   protected WebElement video;
 
   By closeButton = By.cssSelector(".close.wikia-chiclet-button > img");
@@ -107,7 +107,8 @@ public class PreviewEditModePageObject extends EditMode {
   }
 
   public void verifyVideoOnPreview(String videoID) {
-    wait.forElementVisible(video);
-    waitForValueToBePresentInElementsAttributeByElement(video, "id", videoID);
+//    wait.forElementVisible(video);
+    video.getText().equals(videoID);
+//    waitForValueToBePresentInElementsAttributeByElement(video, "id", videoID);
   }
 }
