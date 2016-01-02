@@ -82,8 +82,9 @@ public class PinMapTests extends NewTestTemplate {
   @RelatedIssue(issueID = " ",
       comment = "This maps test should not fail")
   @DontRun(env = {"dev", "sandbox", "preview"})
-  @Test(groups = {"PinMapTests_004", "PinMapTests", "InteractiveMaps"},
-      dependsOnMethods = "PinMapTests_006_VerifyChangePinData")
+  @Test(groups = {"PinMapTests_004", "PinMapTests", "InteractiveMaps"}
+  //,dependsOnMethods = "PinMapTests_006_VerifyChangePinData")
+  )
   @Execute(asUser = User.USER)
   public void PinMapTests_004_VerifyPopUpAfterClickPin() {
     WikiBasePageObject base = new WikiBasePageObject(driver);
@@ -97,8 +98,9 @@ public class PinMapTests extends NewTestTemplate {
   }
 
   @DontRun(env = {"dev", "sandbox", "preview"})
-  @Test(enabled = false, groups = {"PinMapTests_005", "PinMapTests", "InteractiveMaps"},
-      dependsOnMethods = "PinMapTests_006_VerifyChangePinData")
+  @Test(enabled = false, groups = {"PinMapTests_005", "PinMapTests", "InteractiveMaps"}
+  //,dependsOnMethods = "PinMapTests_006_VerifyChangePinData")
+  )
   @Execute(asUser = User.USER)
   public void PinMapTests_005_VerifyDeletePin() {
     WikiBasePageObject base = new WikiBasePageObject(driver);

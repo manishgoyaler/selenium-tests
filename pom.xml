@@ -139,6 +139,11 @@
 			<artifactId>htmlunit</artifactId>
 			<version>2.18</version>
 		</dependency>
+		 <dependency>
+        <groupId>org.littleshoot</groupId>
+        <artifactId>littleproxy</artifactId>
+        <version>1.1.0-beta1</version>
+    	</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -160,7 +165,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>${testSuite}</suiteXmlFile>
 					</suiteXmlFiles>
-					<argLine>-Xms800m -Xmx800m -XX:MaxPermSize=1024m</argLine>
+					<argLine>-Xms800m -Xmx800m -XX:MaxPermSize=1024m -Djava.awt.headless=true</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
