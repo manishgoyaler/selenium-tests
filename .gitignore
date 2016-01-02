@@ -6,9 +6,6 @@
 .gradle/
 .project
 .settings/
-captcha.txt
-config.xml
-config.yml
 chromedriver.log
 bin/
 build/
